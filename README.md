@@ -166,7 +166,7 @@ angular.module("app", ["chart.js","datatables"])
     }
 
     var refresh=()=>{
-        $http.get('http://raspberrypi.local:3009/api/modbus').then((response)=>{
+        $http.get('http://raspberrypi.local:3013/api/modbus').then((response)=>{
             let labels=new Array();
             let temperature=new Array();
             let humidity=new Array();
@@ -188,7 +188,7 @@ angular.module("app", ["chart.js","datatables"])
 }])
 .controller('DatatablesCtrl', ['$scope','$interval','$http', function ($scope, $interval, $http) {
     var refresh=()=>{
-        $http.get('http://raspberrypi.local:3009/api/modbus').then((response)=>{
+        $http.get('http://raspberrypi.local:3013/api/modbus').then((response)=>{
             $scope.details=response.data.detail;
         });
     };
